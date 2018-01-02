@@ -43,6 +43,8 @@ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 # Change to the new shell, prompts for password
 chsh -s /usr/local/bin/bash
 
+# Install jq
+brew jq
 # Install `wget` with IRI support.
 brew install wget --with-iri
 
@@ -174,5 +176,11 @@ brew install boot2docker
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
+# Install passwordstore
+brew install pass
+echo "source /usr/local/etc/bash_completion.d/password-store" >> ~/.bashrc
+
 # Remove outdated versions from the cellar.
 brew cleanup
+
+
